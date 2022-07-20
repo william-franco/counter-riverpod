@@ -10,13 +10,13 @@ William Franco (Dev mobile).
 
 ## ScreenShots
 
-| Image 1 | Image 2 | Image 3 |
-|----------|----------|----------|
-| ![example](screenshots/screen-1.png) | ![example](screenshots/screen-2.png) | ![example](screenshots/screen-3.png) |
+| Image 1 | Image 2 |
+|----------|----------|
+| ![example](screenshots/screen-1.png) | ![example](screenshots/screen-2.png) |
 
-| Image 4 | Image 5 | Image 6 |
-|----------|----------|----------|
-| ![example](screenshots/screen-4.png) | ![example](screenshots/screen-5.png) | ![example](screenshots/screen-6.png) |
+| Image 3 | Image 4 |
+|----------|----------|
+| ![example](screenshots/screen-3.png) | ![example](screenshots/screen-4.png) |
 
 ## License
 
