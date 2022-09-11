@@ -4,8 +4,8 @@ import 'dart:developer';
 // Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class CounterProvider extends StateNotifier<int> {
-  CounterProvider() : super(0);
+class CounterNotifier extends StateNotifier<int> {
+  CounterNotifier() : super(0);
 
   void increment() {
     state++;
@@ -13,7 +13,7 @@ class CounterProvider extends StateNotifier<int> {
   }
 
   void decrement() {
-    state > 0 ? state-- : 0;
+    state--;
     _debug();
   }
 

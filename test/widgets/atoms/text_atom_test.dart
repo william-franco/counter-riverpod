@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 // Project imports:
-import 'package:counter_riverpod/widgets/atoms/text_atom.dart';
+import 'package:counter_riverpod/src/widgets/atoms/text_atom.dart';
 
 void main() {
   testWidgets('TextAtom', (WidgetTester tester) async {

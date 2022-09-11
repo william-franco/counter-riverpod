@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 // Project imports:
-import 'package:counter_riverpod/widgets/molecules/floating_button_molecule.dart';
+import 'package:counter_riverpod/src/widgets/molecules/floating_button_molecule.dart';
 
 void main() {
   testWidgets('FloatingButtonMolecule', (WidgetTester tester) async {

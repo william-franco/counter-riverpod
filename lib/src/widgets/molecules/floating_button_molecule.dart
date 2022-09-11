@@ -3,16 +3,15 @@ import 'package:flutter/material.dart';
 
 class FloatingButtonMolecule extends StatelessWidget {
   final Widget child;
-  // final void Function()? onPressed;
   final VoidCallback? onPressed;
   final String heroTag;
 
   const FloatingButtonMolecule({
-    Key? key,
-    required this.heroTag,
-    this.onPressed,
+    super.key,
     required this.child,
-  }) : super(key: key);
+    this.onPressed,
+    required this.heroTag,
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 
 // Project imports:
-import 'package:counter_riverpod/features/counter/counter_view.dart';
-import 'package:counter_riverpod/features/setting/setting_view.dart';
+import 'package:counter_riverpod/src/features/counter/counter_view.dart';
+import 'package:counter_riverpod/src/features/setting/setting_view.dart';
 
 class Routes {
   Routes._();

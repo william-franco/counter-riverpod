@@ -1,6 +1,6 @@
 # Counter Riverpod
 
-Counter app with riverpod.
+Application to manage states in flutter using Riverpod.
 
 Made with Flutter and some coffee cups. :D
 

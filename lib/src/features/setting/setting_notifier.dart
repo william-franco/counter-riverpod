@@ -5,8 +5,8 @@ import 'dart:developer';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class SettingProvider extends StateNotifier<bool> {
-  SettingProvider(this.prefs) : super(prefs?.getBool('theme') ?? false);
+class SettingNotifier extends StateNotifier<bool> {
+  SettingNotifier(this.prefs) : super(prefs?.getBool('theme') ?? false);
 
   final SharedPreferences? prefs;
 

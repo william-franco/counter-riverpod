@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
-import 'package:counter_riverpod/features/setting/setting_singleton.dart';
-import 'package:counter_riverpod/routes/routes.dart';
+import 'package:counter_riverpod/src/features/setting/setting_provider.dart';
+import 'package:counter_riverpod/src/routes/routes.dart';
 
 void main() {
   runApp(
@@ -15,18 +15,18 @@ void main() {
 }
 
 class MyApp extends ConsumerWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final themeData = ref.watch(settingProvider);
+    final state = ref.watch(settingProvider);
     return MaterialApp(
       title: 'Counter Riverpod',
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
-      themeMode: themeData ? ThemeMode.dark : ThemeMode.light,
+      themeMode: state ? ThemeMode.dark : ThemeMode.light,
       routes: Routes.routes,
       initialRoute: Routes.counter,
     );

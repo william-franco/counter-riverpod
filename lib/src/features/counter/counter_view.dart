@@ -5,22 +5,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
-import 'package:counter_riverpod/features/counter/counter_singleton.dart';
-import 'package:counter_riverpod/routes/routes.dart';
-import 'package:counter_riverpod/widgets/atoms/text_atom.dart';
-import 'package:counter_riverpod/widgets/molecules/floating_button_molecule.dart';
+import 'package:counter_riverpod/src/features/counter/counter_provider.dart';
+import 'package:counter_riverpod/src/routes/routes.dart';
+import 'package:counter_riverpod/src/widgets/atoms/text_atom.dart';
+import 'package:counter_riverpod/src/widgets/molecules/app_bar_molecule.dart';
+import 'package:counter_riverpod/src/widgets/molecules/floating_button_molecule.dart';
 
 class CounterView extends ConsumerWidget {
-  const CounterView({Key? key}) : super(key: key);
+  const CounterView({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final countData = ref.watch(counterSingleton);
+    final state = ref.watch(counterProvider);
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: false,
+      appBar: AppBarMolecule(
         title: const TextAtom(text: 'Counter'),
-        actions: [
+        actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.settings_outlined),
             onPressed: () => Navigator.of(context).pushNamed(Routes.setting),
@@ -36,7 +36,7 @@ class CounterView extends ConsumerWidget {
                 text: 'You have pushed the button this many times:',
               ),
               TextAtom(
-                text: '$countData',
+                text: '$state',
                 style: Theme.of(context).textTheme.headline4,
               ),
             ],
@@ -48,15 +48,15 @@ class CounterView extends ConsumerWidget {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: <Widget>[
           FloatingButtonMolecule(
-            heroTag: 'Decrement',
-            child: const Icon(Icons.remove_outlined),
-            onPressed: () => ref.read(counterSingleton.notifier).decrement(),
+            heroTag: 'Increment',
+            child: const Icon(Icons.add_outlined),
+            onPressed: () => ref.read(counterProvider.notifier).increment(),
           ),
           const SizedBox(height: 8.0),
           FloatingButtonMolecule(
-            heroTag: 'Increment',
-            child: const Icon(Icons.add_outlined),
-            onPressed: () => ref.read(counterSingleton.notifier).increment(),
+            heroTag: 'Decrement',
+            child: const Icon(Icons.remove_outlined),
+            onPressed: () => ref.read(counterProvider.notifier).decrement(),
           ),
         ],
       ),
