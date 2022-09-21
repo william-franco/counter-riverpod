@@ -21,14 +21,13 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(settingProvider);
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Counter Riverpod',
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
       themeMode: state ? ThemeMode.dark : ThemeMode.light,
-      routes: Routes.routes,
-      initialRoute: Routes.counter,
+      routerConfig: Routes.routes,
     );
   }
 }

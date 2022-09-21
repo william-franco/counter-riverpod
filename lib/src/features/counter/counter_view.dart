@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 // Project imports:
 import 'package:counter_riverpod/src/features/counter/counter_provider.dart';
@@ -23,7 +24,7 @@ class CounterView extends ConsumerWidget {
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.settings_outlined),
-            onPressed: () => Navigator.of(context).pushNamed(Routes.setting),
+            onPressed: () => context.push(Routes.setting),
           )
         ],
       ),
