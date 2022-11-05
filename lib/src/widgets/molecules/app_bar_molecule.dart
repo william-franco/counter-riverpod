@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class AppBarMolecule extends StatelessWidget implements PreferredSizeWidget {
-  // final bool isBack;
   final Widget title;
   final List<Widget>? actions;
 
