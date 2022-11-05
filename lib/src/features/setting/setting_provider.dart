@@ -5,11 +5,12 @@ import 'package:shared_preferences/shared_preferences.dart';
 // Project imports:
 import 'package:counter_riverpod/src/features/setting/setting_notifier.dart';
 
-final sharedPrefs = FutureProvider<SharedPreferences>((ref) async {
+final sharedPrefs = FutureProvider.autoDispose<SharedPreferences>((ref) async {
   return await SharedPreferences.getInstance();
 });
 
-final settingProvider = StateNotifierProvider<SettingNotifier, bool>((ref) {
+final settingProvider =
+    StateNotifierProvider.autoDispose<SettingNotifier, bool>((ref) {
   final pref = ref.watch(sharedPrefs).maybeWhen(
         data: (value) => value,
         orElse: () => null,

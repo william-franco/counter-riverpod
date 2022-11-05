@@ -5,13 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class AppBarMolecule extends StatelessWidget implements PreferredSizeWidget {
-  final bool isBack;
+  // final bool isBack;
   final Widget title;
   final List<Widget>? actions;
 
   const AppBarMolecule({
     super.key,
-    required this.isBack,
     required this.title,
     this.actions,
   });
@@ -25,7 +24,7 @@ class AppBarMolecule extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       centerTitle: false,
-      leading: isBack
+      leading: context.canPop()
           ? IconButton(
               icon: const Icon(Icons.arrow_back_ios_new_outlined),
               onPressed: () => context.pop(),

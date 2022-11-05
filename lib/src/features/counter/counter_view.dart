@@ -20,7 +20,6 @@ class CounterView extends ConsumerWidget {
     final state = ref.watch(counterProvider);
     return Scaffold(
       appBar: AppBarMolecule(
-        isBack: false,
         title: const TextAtom(text: 'Counter'),
         actions: <Widget>[
           IconButton(
