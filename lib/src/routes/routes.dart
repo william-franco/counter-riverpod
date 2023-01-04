@@ -8,13 +8,13 @@ import 'package:go_router/go_router.dart';
 import 'package:counter_riverpod/src/features/counter/counter_view.dart';
 import 'package:counter_riverpod/src/features/setting/setting_view.dart';
 
-class Routes {
-  Routes._();
+final routesApp = Routes();
 
+class Routes {
   static const String home = '/';
   static const String setting = '/setting';
 
-  static final routes = GoRouter(
+  final routes = GoRouter(
     debugLogDiagnostics: true,
     initialLocation: home,
     routes: [

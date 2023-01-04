@@ -12,11 +12,11 @@ William Franco (Dev mobile).
 
 | Image 1 | Image 2 |
 |----------|----------|
-| ![example](screenshots/screen-1.png) | ![example](screenshots/screen-2.png) |
+| ![example](assets/screenshots/screen-1.png) | ![example](assets/screenshots/screen-2.png) |
 
 | Image 3 | Image 4 |
 |----------|----------|
-| ![example](screenshots/screen-3.png) | ![example](screenshots/screen-4.png) |
+| ![example](assets/screenshots/screen-3.png) | ![example](assets/screenshots/screen-4.png) |
 
 ## License
 
