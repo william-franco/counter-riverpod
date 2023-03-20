@@ -13,7 +13,7 @@ class CounterNotifier extends StateNotifier<int> {
   }
 
   void decrement() {
-    state--;
+    state > 0 ? state-- : 0;
     _debug();
   }
 
