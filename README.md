@@ -12,17 +12,17 @@ William Franco (Dev mobile).
 
 | Image 1 | Image 2 |
 |----------|----------|
-| ![example](assets/screenshots/screen-1.png) | ![example](assets/screenshots/screen-2.png) |
+| ![App Screenshot](assets/screenshots/screen-1.png) | ![App Screenshot](assets/screenshots/screen-2.png) |
 
 | Image 3 | Image 4 |
 |----------|----------|
-| ![example](assets/screenshots/screen-3.png) | ![example](assets/screenshots/screen-4.png) |
+| ![App Screenshot](assets/screenshots/screen-3.png) | ![App Screenshot](assets/screenshots/screen-4.png) |
 
 ## License
 
 MIT License
 
-Copyright (c) 2022 William Franco
+Copyright (c) 2023 William Franco
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

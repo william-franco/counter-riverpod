@@ -38,7 +38,7 @@ class CounterView extends ConsumerWidget {
               ),
               TextAtom(
                 text: '$state',
-                style: Theme.of(context).textTheme.headline4,
+                style: Theme.of(context).textTheme.headlineMedium,
               ),
             ],
           ),
