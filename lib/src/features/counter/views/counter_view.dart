@@ -6,7 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 // Project imports:
-import 'package:counter_riverpod/src/features/counter/counter_provider.dart';
+import 'package:counter_riverpod/src/dependency_injector/dependency_injector.dart';
 import 'package:counter_riverpod/src/routes/routes.dart';
 import 'package:counter_riverpod/src/widgets/atoms/text_atom.dart';
 import 'package:counter_riverpod/src/widgets/molecules/app_bar_molecule.dart';
@@ -17,7 +17,7 @@ class CounterView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final state = ref.watch(counterProvider);
+    final state = ref.watch(counterViewModelProvider);
     return Scaffold(
       appBar: AppBarMolecule(
         title: const TextAtom(text: 'Counter'),
@@ -51,13 +51,17 @@ class CounterView extends ConsumerWidget {
           FloatingButtonMolecule(
             heroTag: 'Increment',
             child: const Icon(Icons.add_outlined),
-            onPressed: () => ref.read(counterProvider.notifier).increment(),
+            onPressed: () {
+              ref.read(counterViewModelProvider.notifier).increment();
+            },
           ),
           const SizedBox(height: 8.0),
           FloatingButtonMolecule(
             heroTag: 'Decrement',
             child: const Icon(Icons.remove_outlined),
-            onPressed: () => ref.read(counterProvider.notifier).decrement(),
+            onPressed: () {
+              ref.read(counterViewModelProvider.notifier).decrement();
+            },
           ),
         ],
       ),

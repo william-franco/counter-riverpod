@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
-import 'package:counter_riverpod/src/features/setting/setting_provider.dart';
+import 'package:counter_riverpod/src/dependency_injector/dependency_injector.dart';
 import 'package:counter_riverpod/src/widgets/atoms/text_atom.dart';
 import 'package:counter_riverpod/src/widgets/molecules/app_bar_molecule.dart';
 
@@ -14,26 +14,26 @@ class SettingView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final state = ref.watch(settingProvider);
+    final state = ref.watch(settingViewModelProvider);
     return Scaffold(
       appBar: const AppBarMolecule(
         title: TextAtom(text: 'Settings'),
       ),
-      body: SafeArea(
-        child: ListView(
-          children: <Widget>[
-            ListTile(
-              leading: const Icon(Icons.brightness_6_outlined),
-              title: const Text('Dark theme'),
-              trailing: Switch(
-                value: state,
-                onChanged: (bool enabled) {
-                  ref.read(settingProvider.notifier).changeTheme(enabled);
-                },
-              ),
+      body: ListView(
+        children: <Widget>[
+          ListTile(
+            leading: const Icon(Icons.brightness_6_outlined),
+            title: const Text('Dark theme'),
+            trailing: Switch(
+              value: state,
+              onChanged: (bool enabled) {
+                ref
+                    .read(settingViewModelProvider.notifier)
+                    .changeTheme(enabled);
+              },
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

@@ -5,8 +5,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 
 // Project imports:
-import 'package:counter_riverpod/src/features/counter/counter_view.dart';
-import 'package:counter_riverpod/src/features/setting/setting_view.dart';
+import 'package:counter_riverpod/src/features/counter/views/counter_view.dart';
+import 'package:counter_riverpod/src/features/setting/views/setting_view.dart';
 
 final routesApp = Routes();
 
