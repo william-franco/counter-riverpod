@@ -1,9 +1,11 @@
 // Package imports:
-import 'package:counter_riverpod/src/features/setting/repositories/setting_repository.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
+import 'package:counter_riverpod/src/features/bottom/view_models/bottom_view_model.dart';
 import 'package:counter_riverpod/src/features/counter/view_models/counter_view_model.dart';
+import 'package:counter_riverpod/src/features/items/view_models/item_view_model.dart';
+import 'package:counter_riverpod/src/features/setting/repositories/setting_repository.dart';
 import 'package:counter_riverpod/src/features/setting/view_models/setting_view_model.dart';
 import 'package:counter_riverpod/src/services/storage_service.dart';
 
@@ -20,9 +22,19 @@ final settingRepositoryProvider = Provider<SettingRepository>((ref) {
 });
 
 // View Models
+final bottomViewModelProvider =
+    StateNotifierProvider<BottomViewModel, int>((ref) {
+  return BottomViewModel();
+});
+
 final counterViewModelProvider =
     StateNotifierProvider<CounterViewModel, int>((ref) {
   return CounterViewModel();
+});
+
+final itemViewModelProvider =
+    StateNotifierProvider<ItemsViewModel, List<int>>((ref) {
+  return ItemsViewModel();
 });
 
 final settingViewModelProvider =

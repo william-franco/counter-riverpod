@@ -3,14 +3,9 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 
 // Project imports:
 import 'package:counter_riverpod/src/dependency_injector/dependency_injector.dart';
-import 'package:counter_riverpod/src/routes/routes.dart';
-import 'package:counter_riverpod/src/widgets/atoms/text_atom.dart';
-import 'package:counter_riverpod/src/widgets/molecules/app_bar_molecule.dart';
-import 'package:counter_riverpod/src/widgets/molecules/floating_button_molecule.dart';
 
 class CounterView extends ConsumerWidget {
   const CounterView({super.key});
@@ -19,25 +14,19 @@ class CounterView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(counterViewModelProvider);
     return Scaffold(
-      appBar: AppBarMolecule(
-        title: const TextAtom(text: 'Counter'),
-        actions: <Widget>[
-          IconButton(
-            icon: const Icon(Icons.settings_outlined),
-            onPressed: () => context.push(Routes.setting),
-          ),
-        ],
+      appBar: AppBar(
+        title: const Text('Counter'),
       ),
       body: SafeArea(
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              const TextAtom(
-                text: 'You have pushed the button this many times:',
+              const Text(
+                'You have pushed the button this many times:',
               ),
-              TextAtom(
-                text: '$state',
+              Text(
+                '$state',
                 style: Theme.of(context).textTheme.headlineMedium,
               ),
             ],
@@ -48,16 +37,16 @@ class CounterView extends ConsumerWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.end,
         children: <Widget>[
-          FloatingButtonMolecule(
-            heroTag: 'Increment',
+          FloatingActionButton(
+            key: const Key('increment'),
             child: const Icon(Icons.add_outlined),
             onPressed: () {
               ref.read(counterViewModelProvider.notifier).increment();
             },
           ),
           const SizedBox(height: 8.0),
-          FloatingButtonMolecule(
-            heroTag: 'Decrement',
+          FloatingActionButton(
+            key: const Key('decrement'),
             child: const Icon(Icons.remove_outlined),
             onPressed: () {
               ref.read(counterViewModelProvider.notifier).decrement();

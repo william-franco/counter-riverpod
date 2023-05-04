@@ -17,11 +17,6 @@ class CounterViewModel extends StateNotifier<int> {
     _debug();
   }
 
-  void reset() {
-    state = 0;
-    _debug();
-  }
-
   void _debug() {
     log('Counter: $state');
   }
