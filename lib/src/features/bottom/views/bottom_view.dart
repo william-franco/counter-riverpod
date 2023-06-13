@@ -33,7 +33,9 @@ class _BottomViewState extends ConsumerState<BottomView> {
         selectedIndex: state,
         animationDuration: const Duration(milliseconds: 600),
         onDestinationSelected: (int index) {
-          ref.read(bottomViewModelProvider.notifier).changeIndexBottom(index);
+          ref
+              .read(bottomViewModelProvider.notifier)
+              .changeIndexBottom(index: index);
         },
         destinations: const <NavigationDestination>[
           NavigationDestination(

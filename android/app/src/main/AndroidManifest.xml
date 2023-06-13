@@ -1,5 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="br.com.williamfranco.counter_riverpod">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
    <application
         android:label="Counter Riverpod"
         android:name="${applicationName}"

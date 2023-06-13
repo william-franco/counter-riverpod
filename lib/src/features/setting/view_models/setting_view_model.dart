@@ -7,21 +7,31 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 // Project imports:
 import 'package:counter_riverpod/src/features/setting/repositories/setting_repository.dart';
 
-class SettingViewModel extends StateNotifier<bool> {
+abstract base class SettingViewModel extends StateNotifier<bool> {
+  SettingViewModel() : super(false);
+
+  Future<void> loadTheme();
+  Future<void> changeTheme({required bool isDarkMode});
+}
+
+base class SettingViewModelImpl extends StateNotifier<bool>
+    implements SettingViewModel {
   final SettingRepository settingRepository;
 
-  SettingViewModel({required this.settingRepository}) : super(false) {
-    _loadTheme();
+  SettingViewModelImpl({required this.settingRepository}) : super(false) {
+    loadTheme();
   }
 
-  Future<void> _loadTheme() async {
+  @override
+  Future<void> loadTheme() async {
     state = await settingRepository.readTheme();
     _debug();
   }
 
-  Future<void> changeTheme(bool isDarkTheme) async {
-    state = isDarkTheme;
-    await settingRepository.updateTheme(isDarkTheme: isDarkTheme);
+  @override
+  Future<void> changeTheme({required bool isDarkMode}) async {
+    state = isDarkMode;
+    await settingRepository.updateTheme(isDarkTheme: isDarkMode);
     _debug();
   }
 

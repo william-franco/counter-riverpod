@@ -17,29 +17,27 @@ final storageServiceProvider = Provider<StorageService>((ref) {
 // Repositories
 final settingRepositoryProvider = Provider<SettingRepository>((ref) {
   return SettingRepositoryImpl(
-    storageService: ref.watch(storageServiceProvider),
-  );
+      storageService: ref.watch(storageServiceProvider));
 });
 
 // View Models
 final bottomViewModelProvider =
     StateNotifierProvider<BottomViewModel, int>((ref) {
-  return BottomViewModel();
+  return BottomViewModelImpl();
 });
 
 final counterViewModelProvider =
     StateNotifierProvider<CounterViewModel, int>((ref) {
-  return CounterViewModel();
+  return CounterViewModelImpl();
 });
 
 final itemViewModelProvider =
     StateNotifierProvider<ItemsViewModel, List<int>>((ref) {
-  return ItemsViewModel();
+  return ItemsViewModelImpl();
 });
 
 final settingViewModelProvider =
     StateNotifierProvider<SettingViewModel, bool>((ref) {
-  return SettingViewModel(
-    settingRepository: ref.watch(settingRepositoryProvider),
-  );
+  return SettingViewModelImpl(
+      settingRepository: ref.watch(settingRepositoryProvider));
 });

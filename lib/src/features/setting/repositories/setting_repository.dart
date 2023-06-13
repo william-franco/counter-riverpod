@@ -2,7 +2,7 @@
 import 'package:counter_riverpod/src/constants/constants.dart';
 import 'package:counter_riverpod/src/services/storage_service.dart';
 
-abstract class SettingRepository {
+abstract interface class SettingRepository {
   Future<bool> readTheme();
   Future<void> updateTheme({required bool isDarkTheme});
 }

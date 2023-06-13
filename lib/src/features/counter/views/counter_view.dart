@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
+import 'package:counter_riverpod/src/common_widgets/common_padding.dart';
 import 'package:counter_riverpod/src/dependency_injector/dependency_injector.dart';
 
 class CounterView extends ConsumerWidget {
@@ -17,20 +18,18 @@ class CounterView extends ConsumerWidget {
       appBar: AppBar(
         title: const Text('Counter'),
       ),
-      body: SafeArea(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              const Text(
-                'You have pushed the button this many times:',
-              ),
-              Text(
-                '$state',
-                style: Theme.of(context).textTheme.headlineMedium,
-              ),
-            ],
-          ),
+      body: CommonPadding(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            const Text(
+              'You have pushed the button this many times:',
+            ),
+            Text(
+              '$state',
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
+          ],
         ),
       ),
       floatingActionButton: Column(

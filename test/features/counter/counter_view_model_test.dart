@@ -9,7 +9,7 @@ void main() {
     late CounterViewModel viewModel;
 
     setUp(() {
-      viewModel = CounterViewModel();
+      viewModel = CounterViewModelImpl();
     });
 
     test('initial value is 0', () {

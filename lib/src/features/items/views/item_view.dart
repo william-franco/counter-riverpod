@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
+import 'package:counter_riverpod/src/common_widgets/common_padding.dart';
 import 'package:counter_riverpod/src/dependency_injector/dependency_injector.dart';
 
 class ItemsView extends ConsumerWidget {
@@ -26,7 +27,7 @@ class ItemsView extends ConsumerWidget {
           ),
         ],
       ),
-      body: SafeArea(
+      body: CommonPadding(
         child: state.isEmpty
             ? const Center(child: Text('The list is empty.'))
             : ListView.builder(

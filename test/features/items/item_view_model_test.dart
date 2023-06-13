@@ -9,7 +9,7 @@ void main() {
     late ItemsViewModel viewModel;
 
     setUp(() {
-      viewModel = ItemsViewModel();
+      viewModel = ItemsViewModelImpl();
     });
 
     test('initial value is an empty list', () {

@@ -4,11 +4,21 @@ import 'dart:developer';
 // Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class ItemsViewModel extends StateNotifier<List<int>> {
+abstract base class ItemsViewModel extends StateNotifier<List<int>> {
   ItemsViewModel() : super([]);
+
+  void addItemToList();
+  void removeItemFromList();
+  void removeAllItems();
+}
+
+base class ItemsViewModelImpl extends StateNotifier<List<int>>
+    implements ItemsViewModel {
+  ItemsViewModelImpl() : super([]);
 
   int _count = 0;
 
+  @override
   void addItemToList() {
     _count++;
     state.add(_count);
@@ -16,6 +26,7 @@ class ItemsViewModel extends StateNotifier<List<int>> {
     _debug();
   }
 
+  @override
   void removeItemFromList() {
     _count > 0 ? _count-- : 0;
     state.isNotEmpty ? state.removeLast() : 0;
@@ -23,6 +34,7 @@ class ItemsViewModel extends StateNotifier<List<int>> {
     _debug();
   }
 
+  @override
   void removeAllItems() {
     _count = 0;
     state.clear();
