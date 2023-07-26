@@ -93,7 +93,7 @@
     },
     {
       "name": "go_router",
-      "rootUri": "file:///home/william/.pub-cache/hosted/pub.dev/go_router-9.0.0",
+      "rootUri": "file:///home/william/.pub-cache/hosted/pub.dev/go_router-10.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
@@ -314,7 +314,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-07-03T20:13:38.089462Z",
+  "generated": "2023-07-24T20:16:48.020576Z",
   "generator": "pub",
-  "generatorVersion": "3.0.5"
+  "generatorVersion": "3.0.6"
 }
