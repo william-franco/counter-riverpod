@@ -13,23 +13,23 @@ void main() {
     });
 
     test('initial value is 0', () {
-      expect(viewModel.state, 0);
+      expect(viewModel.debugState, 0);
     });
 
     test('increment value', () {
       viewModel.increment();
-      expect(viewModel.state, 1);
+      expect(viewModel.debugState, 1);
     });
 
     test('decrement value', () {
       viewModel.increment();
       viewModel.decrement();
-      expect(viewModel.state, 0);
+      expect(viewModel.debugState, 0);
     });
 
     test('value cannot be less than 0', () {
       viewModel.decrement();
-      expect(viewModel.state, 0);
+      expect(viewModel.debugState, 0);
     });
   });
 }

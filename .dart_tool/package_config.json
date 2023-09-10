@@ -75,7 +75,7 @@
     },
     {
       "name": "flutter_riverpod",
-      "rootUri": "file:///home/william/.pub-cache/hosted/pub.dev/flutter_riverpod-2.3.7",
+      "rootUri": "file:///home/william/.pub-cache/hosted/pub.dev/flutter_riverpod-2.4.0",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
@@ -93,7 +93,7 @@
     },
     {
       "name": "go_router",
-      "rootUri": "file:///home/william/.pub-cache/hosted/pub.dev/go_router-10.1.0",
+      "rootUri": "file:///home/william/.pub-cache/hosted/pub.dev/go_router-10.1.2",
       "packageUri": "lib/",
       "languageVersion": "2.19"
     },
@@ -177,15 +177,15 @@
     },
     {
       "name": "riverpod",
-      "rootUri": "file:///home/william/.pub-cache/hosted/pub.dev/riverpod-2.3.7",
+      "rootUri": "file:///home/william/.pub-cache/hosted/pub.dev/riverpod-2.4.0",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
     {
       "name": "shared_preferences",
-      "rootUri": "file:///home/william/.pub-cache/hosted/pub.dev/shared_preferences-2.2.0",
+      "rootUri": "file:///home/william/.pub-cache/hosted/pub.dev/shared_preferences-2.2.1",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "2.19"
     },
     {
       "name": "shared_preferences_android",
@@ -314,7 +314,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2023-08-24T18:37:54.634509Z",
+  "generated": "2023-09-08T17:39:00.582634Z",
   "generator": "pub",
-  "generatorVersion": "3.1.0"
+  "generatorVersion": "3.1.1"
 }

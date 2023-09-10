@@ -13,25 +13,25 @@ void main() {
     });
 
     test('initial value is an empty list', () {
-      expect(viewModel.state, []);
+      expect(viewModel.debugState, []);
     });
 
     test('add item to list', () {
       viewModel.addItemToList();
-      expect(viewModel.state, [1]);
+      expect(viewModel.debugState, [1]);
     });
 
     test('remove item from list', () {
       viewModel.addItemToList();
       viewModel.removeItemFromList();
-      expect(viewModel.state, []);
+      expect(viewModel.debugState, []);
     });
 
     test('remove all items from list', () {
       viewModel.addItemToList();
       viewModel.addItemToList();
       viewModel.removeAllItems();
-      expect(viewModel.state, []);
+      expect(viewModel.debugState, []);
     });
   });
 }
