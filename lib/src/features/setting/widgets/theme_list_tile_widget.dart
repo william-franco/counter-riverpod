@@ -12,16 +12,16 @@ class ThemeListTileWidget extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isDarkTheme = ref.watch(settingViewModelProvider);
+    final viewModel = ref.watch(settingViewModelProvider);
     return ListTile(
       leading: const Icon(Icons.brightness_6_outlined),
       title: const Text('Dark Theme'),
       trailing: Switch(
-        value: isDarkTheme,
+        value: viewModel.isDarkTheme,
         onChanged: (bool enabled) {
           ref
               .read(settingViewModelProvider.notifier)
-              .changeTheme(isDarkMode: enabled);
+              .changeTheme(isDarkTheme: enabled);
         },
       ),
     );

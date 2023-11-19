@@ -13,7 +13,7 @@ class CounterView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final state = ref.watch(counterViewModelProvider);
+    final viewModel = ref.watch(counterViewModelProvider);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Counter'),
@@ -26,7 +26,7 @@ class CounterView extends ConsumerWidget {
               'You have pushed the button this many times:',
             ),
             Text(
-              '$state',
+              '${viewModel.count}',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],

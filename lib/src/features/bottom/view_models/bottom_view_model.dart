@@ -4,23 +4,26 @@ import 'dart:developer';
 // Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-abstract base class BottomViewModel extends StateNotifier<int> {
-  BottomViewModel() : super(0);
+// Project imports:
+import 'package:counter_riverpod/src/features/bottom/models/bottom_model.dart';
+
+abstract base class BottomViewModel extends StateNotifier<BottomModel> {
+  BottomViewModel() : super(BottomModel());
 
   void changeIndexBottom({required int index});
 }
 
-base class BottomViewModelImpl extends StateNotifier<int>
+base class BottomViewModelImpl extends StateNotifier<BottomModel>
     implements BottomViewModel {
-  BottomViewModelImpl() : super(0);
+  BottomViewModelImpl() : super(BottomModel());
 
   @override
   void changeIndexBottom({required int index}) {
-    state = index;
+    state.indexTab = index;
     _debug();
   }
 
   void _debug() {
-    log('Current tab: $state');
+    log('Current tab: ${state.indexTab}');
   }
 }

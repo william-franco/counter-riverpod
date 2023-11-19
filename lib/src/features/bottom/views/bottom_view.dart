@@ -26,11 +26,11 @@ class _BottomViewState extends ConsumerState<BottomView> {
 
   @override
   Widget build(BuildContext context) {
-    final state = ref.watch(bottomViewModelProvider);
+    final viewModel = ref.watch(bottomViewModelProvider);
     return Scaffold(
-      body: listOfWidgets.elementAt(state),
+      body: listOfWidgets.elementAt(viewModel.indexTab),
       bottomNavigationBar: NavigationBar(
-        selectedIndex: state,
+        selectedIndex: viewModel.indexTab,
         animationDuration: const Duration(milliseconds: 600),
         onDestinationSelected: (int index) {
           ref

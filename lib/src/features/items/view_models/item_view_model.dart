@@ -4,45 +4,46 @@ import 'dart:developer';
 // Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-abstract base class ItemsViewModel extends StateNotifier<List<int>> {
-  ItemsViewModel() : super([]);
+// Project imports:
+import 'package:counter_riverpod/src/features/items/models/item_model.dart';
+
+abstract base class ItemsViewModel extends StateNotifier<ItemsModel> {
+  ItemsViewModel() : super(ItemsModel());
 
   void addItemToList();
   void removeItemFromList();
   void removeAllItems();
 }
 
-base class ItemsViewModelImpl extends StateNotifier<List<int>>
+base class ItemsViewModelImpl extends StateNotifier<ItemsModel>
     implements ItemsViewModel {
-  ItemsViewModelImpl() : super([]);
-
-  int _count = 0;
+  ItemsViewModelImpl() : super(ItemsModel());
 
   @override
   void addItemToList() {
-    _count++;
-    state.add(_count);
-    state = [...state];
+    state.count++;
+    state.items.add(state.count);
+    // state = [...state];
     _debug();
   }
 
   @override
   void removeItemFromList() {
-    _count > 0 ? _count-- : 0;
-    state.isNotEmpty ? state.removeLast() : 0;
-    state = [...state];
+    state.count > 0 ? state.count-- : 0;
+    state.items.isNotEmpty ? state.items.removeLast() : 0;
+    // state = [...state];
     _debug();
   }
 
   @override
   void removeAllItems() {
-    _count = 0;
-    state.clear();
-    state = [...state];
+    state.count = 0;
+    state.items.clear();
+    // state = [...state];
     _debug();
   }
 
   void _debug() {
-    log('List item: ${state.length}');
+    log('List item: ${state.items.length}');
   }
 }

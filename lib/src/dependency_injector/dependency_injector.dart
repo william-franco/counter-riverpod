@@ -2,9 +2,13 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
+import 'package:counter_riverpod/src/features/bottom/models/bottom_model.dart';
 import 'package:counter_riverpod/src/features/bottom/view_models/bottom_view_model.dart';
+import 'package:counter_riverpod/src/features/counter/models/counter_model.dart';
 import 'package:counter_riverpod/src/features/counter/view_models/counter_view_model.dart';
+import 'package:counter_riverpod/src/features/items/models/item_model.dart';
 import 'package:counter_riverpod/src/features/items/view_models/item_view_model.dart';
+import 'package:counter_riverpod/src/features/setting/models/setting_model.dart';
 import 'package:counter_riverpod/src/features/setting/repositories/setting_repository.dart';
 import 'package:counter_riverpod/src/features/setting/view_models/setting_view_model.dart';
 import 'package:counter_riverpod/src/services/storage_service.dart';
@@ -22,22 +26,22 @@ final settingRepositoryProvider = Provider<SettingRepository>((ref) {
 
 // View Models
 final bottomViewModelProvider =
-    StateNotifierProvider<BottomViewModel, int>((ref) {
+    StateNotifierProvider<BottomViewModel, BottomModel>((ref) {
   return BottomViewModelImpl();
 });
 
 final counterViewModelProvider =
-    StateNotifierProvider<CounterViewModel, int>((ref) {
+    StateNotifierProvider<CounterViewModel, CounterModel>((ref) {
   return CounterViewModelImpl();
 });
 
 final itemViewModelProvider =
-    StateNotifierProvider<ItemsViewModel, List<int>>((ref) {
+    StateNotifierProvider<ItemsViewModel, ItemsModel>((ref) {
   return ItemsViewModelImpl();
 });
 
 final settingViewModelProvider =
-    StateNotifierProvider<SettingViewModel, bool>((ref) {
+    StateNotifierProvider<SettingViewModel, SettingModel>((ref) {
   return SettingViewModelImpl(
       settingRepository: ref.watch(settingRepositoryProvider));
 });

@@ -4,30 +4,33 @@ import 'dart:developer';
 // Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-abstract base class CounterViewModel extends StateNotifier<int> {
-  CounterViewModel() : super(0);
+// Project imports:
+import 'package:counter_riverpod/src/features/counter/models/counter_model.dart';
+
+abstract base class CounterViewModel extends StateNotifier<CounterModel> {
+  CounterViewModel() : super(CounterModel());
 
   void increment();
   void decrement();
 }
 
-base class CounterViewModelImpl extends StateNotifier<int>
+base class CounterViewModelImpl extends StateNotifier<CounterModel>
     implements CounterViewModel {
-  CounterViewModelImpl() : super(0);
+  CounterViewModelImpl() : super(CounterModel());
 
   @override
   void increment() {
-    state++;
+    state.count++;
     _debug();
   }
 
   @override
   void decrement() {
-    state > 0 ? state-- : 0;
+    state.count--;
     _debug();
   }
 
   void _debug() {
-    log('Counter: $state');
+    log('Counter: ${state.count}');
   }
 }

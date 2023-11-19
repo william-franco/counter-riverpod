@@ -13,7 +13,7 @@ class ItemsView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final state = ref.watch(itemViewModelProvider);
+    final viewModel = ref.watch(itemViewModelProvider);
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
@@ -28,10 +28,10 @@ class ItemsView extends ConsumerWidget {
         ],
       ),
       body: CommonPadding(
-        child: state.isEmpty
+        child: viewModel.items.isEmpty
             ? const Center(child: Text('The list is empty.'))
             : ListView.builder(
-                itemCount: state.length,
+                itemCount: viewModel.items.length,
                 itemBuilder: (context, index) {
                   return ListTile(
                     leading: CircleAvatar(
